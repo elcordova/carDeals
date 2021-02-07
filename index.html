@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/gh/bstavroulakis/progressive-web-apps/resources/localforage.js"></script>
   <script defer src="./js/app.js" type="module"></script>
+
   <title>Document</title>
 </head>
 <body>
@@ -18,7 +20,7 @@
       <p>Parking your car</p>
     </div>
     <div class="mdl-grid"></div>
-    <button class="center" >Show more</button>
+    <button class="center" onclick="pageEvents.loadCars()">Show more</button>
   </main>
   <script id="car-card" type="text/template">
     <div class="card" style="background-image: url('${image}')"

@@ -1,7 +1,8 @@
-import {fetCars} from './carService.js';
+import {loadCars} from './carService.js';
 import {loadCarPage} from "./carPageService.js";
 window.pageEvents = {
   loadCarPage,
+  loadCars,
 }
 
-fetCars();
+loadCars();
