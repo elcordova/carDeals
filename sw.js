@@ -1,5 +1,5 @@
 "use strict";
-
+//v0.1.1
 const carDealsCacheName = "carDealsCacheV2";
 const carDealsCachePageName = "carDealsCachePagesV1";
 const carDealsCache = [carDealsCachePageName, carDealsCacheName];
@@ -20,7 +20,7 @@ const carDealsCacheFiles = [
 
 self.addEventListener("install", (event) => {
   console.log("install event:", event);
-  self.skypWaiting();
+  self.skipWaiting();
   const precache = async () => {
     const cache = await caches.open(carDealsCacheName);
     return cache.addAll(carDealsCacheFiles);
