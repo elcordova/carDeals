@@ -28,7 +28,21 @@ export default async () => {
   //event throw when the service worker controlling this page on self.skipWaiting
   navigator.serviceWorker.addEventListener("controllerchange", () => {
     console.log("Controller changed");
-  })
+  });
+
+
+
+
+  navigator.serviceWorker.addEventListener("message", e => {
+    const clientId = e.data.clientId;
+    const message = e.data.message;
+    console.log("From client: ", clientId, message);
+  });
+
+  if (navigator.serviceWorker.controller) {
+    navigator.serviceWorker.controller.postMessage("hello mf");
+  }
+
 
   setInterval(() => {
     swRegistrations.update();
